@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Glove Hirings by Sagan</title>
+  <meta name="description" content="Premium global recruiting. We find the person, not just the resume. 2,000+ placements across 30+ countries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --teal: #093a3e;
+      --teal-dark: #06282b;
+      --cream: #f5f2ed;
+      --gold: #f5b800;
+      --green: #5ce3b0;
+      --blue: #2197ff;
+      --purple: #796aff;
+      --border: #e3ded8;
+      --text-light: #f5f2ed;
+      --text-dark: #093a3e;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--teal);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--teal);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.4s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(9, 58, 62, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 0.75rem 2.5rem;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--teal);
+      padding: 0.6rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(245, 184, 0, 0.4);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      background: var(--teal);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 2.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80vw;
+      height: 80vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(92, 227, 176, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 60vw;
+      height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 184, 0, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 184, 0, 0.12);
+      border: 1px solid rgba(245, 184, 0, 0.25);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: var(--cream);
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    .hero h1 .accent {
+      color: var(--gold);
+    }
+
+    .hero h1 .green {
+      color: var(--green);
+    }
+
+    .hero-sub {
+      font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+      color: rgba(245, 242, 237, 0.7);
+      max-width: 600px;
+      line-height: 1.6;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease 0.6s forwards;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease 0.8s forwards;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--teal);
+      padding: 1rem 2.5rem;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(245, 184, 0, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--cream);
+      padding: 1rem 2.5rem;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 1rem;
+      border: 1.5px solid rgba(245, 242, 237, 0.25);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--cream);
+      background: rgba(245, 242, 237, 0.08);
+    }
+
+    /* ========== STATS STRIP ========== */
+    .stats {
+      background: var(--teal-dark);
+      padding: 3rem 2.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(245, 242, 237, 0.6);
+      margin-top: 0.5rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+
+    /* ========== SECTIONS SHARED ========== */
+    .section {
+      padding: 7rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(245, 184, 0, 0.1);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+      font-size: 1.15rem;
+      color: rgba(9, 58, 62, 0.65);
+      max-width: 650px;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== WHAT WE DO ========== */
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .what-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 1px solid var(--border);
+    }
+
+    .what-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(9, 58, 62, 0.08);
+    }
+
+    .what-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-card-icon.gold { background: rgba(245, 184, 0, 0.12); }
+    .what-card-icon.green { background: rgba(92, 227, 176, 0.12); }
+    .what-card-icon.blue { background: rgba(33, 151, 255, 0.12); }
+
+    .what-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .what-card p {
+      color: rgba(9, 58, 62, 0.6);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* ========== PROCESS ========== */
+    .process-section {
+      background: var(--teal);
+      padding: 7rem 2.5rem;
+      color: var(--cream);
+    }
+
+    .process-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .process-section .section-title {
+      color: var(--cream);
+    }
+
+    .process-section .section-desc {
+      color: rgba(245, 242, 237, 0.6);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .step {
+      position: relative;
+      padding: 2rem;
+      background: rgba(245, 242, 237, 0.04);
+      border: 1px solid rgba(245, 242, 237, 0.08);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .step:hover {
+      background: rgba(245, 242, 237, 0.08);
+      border-color: rgba(245, 242, 237, 0.15);
+    }
+
+    .step-num {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: rgba(245, 184, 0, 0.15);
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.05em;
+    }
+
+    .step h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .step p {
+      color: rgba(245, 242, 237, 0.55);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .step-time {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ========== TEAM ========== */
+    .team-section {
+      padding: 7rem 0;
+    }
+
+    .team-header {
+      padding: 0 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+
+    .team-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 100%;
+    }
+
+    .team-card {
+      position: relative;
+      min-height: 85vh;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .team-card-img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .team-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .team-card:hover .team-card-img img {
+      transform: scale(1.05);
+    }
+
+    .team-card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(6, 40, 43, 0.95) 0%, rgba(6, 40, 43, 0.6) 40%, rgba(6, 40, 43, 0.1) 70%, transparent 100%);
+      transition: background 0.5s ease;
+    }
+
+    .team-card:hover .team-card-overlay {
+      background: linear-gradient(to top, rgba(6, 40, 43, 0.98) 0%, rgba(6, 40, 43, 0.7) 50%, rgba(6, 40, 43, 0.2) 80%, transparent 100%);
+    }
+
+    .team-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      padding: 2.5rem;
+      color: var(--cream);
+    }
+
+    .team-card-name {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .team-card-location {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .team-card-role {
+      font-size: 0.9rem;
+      color: rgba(245, 242, 237, 0.6);
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    .team-card-bio {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: rgba(245, 242, 237, 0.75);
+      font-weight: 300;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+      opacity: 0;
+    }
+
+    .team-card:hover .team-card-bio {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    .team-card-bio .fun {
+      display: block;
+      margin-top: 0.75rem;
+      color: var(--green);
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    /* ========== GUARANTEE ========== */
+    .guarantee {
+      background: white;
+      border-radius: 24px;
+      padding: 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      border: 2px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guarantee::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--green), var(--blue));
+    }
+
+    .guarantee-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .guarantee h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .guarantee p {
+      color: rgba(9, 58, 62, 0.6);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: var(--teal);
+      padding: 8rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120vw;
+      height: 120vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 184, 0, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      color: var(--cream);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section h2 .accent { color: var(--gold); }
+
+    .cta-section p {
+      color: rgba(245, 242, 237, 0.6);
+      font-size: 1.15rem;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .cta-section .btn-primary {
+      font-size: 1.1rem;
+      padding: 1.2rem 3rem;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--teal-dark);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      color: rgba(245, 242, 237, 0.4);
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: var(--gold);
+      transition: opacity 0.3s;
+    }
+
+    .footer a:hover { opacity: 0.7; }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .team-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .team-card {
+        min-height: 70vh;
+      }
+
+      .team-card-bio {
+        max-height: none;
+        opacity: 1;
+      }
+
+      .stats {
+        gap: 2rem;
+      }
+
+      .hero {
+        padding: 7rem 1.5rem 3rem;
+      }
+
+      .nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .section {
+        padding: 5rem 1.5rem;
+      }
+
+      .guarantee {
+        padding: 3rem 2rem;
+        margin: 0 1.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary, .btn-secondary {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2.5rem 1.5rem;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .team-card {
+        min-height: 80vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">SAGAN <span>White Glove</span></div>
+    <a href="https://getsagan.com" target="_blank" class="nav-cta">Work With Us</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">White Glove Hirings by Sagan</div>
+      <h1>
+        We find the <span class="accent">person</span>,<br>
+        not just the <span class="green">resume</span>.
+      </h1>
+      <p class="hero-sub">
+        Premium global recruiting for companies that refuse to settle.
+        We screen hundreds so you meet the three that actually matter.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://getsagan.com" target="_blank" class="btn-primary">
+          Start Hiring
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#team" class="btn-secondary">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number" data-count="2000">0</div>
+      <div class="stat-label">Placements made</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number" data-count="30">0</div>
+      <div class="stat-label">Countries covered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number" data-count="20000">0</div>
+      <div class="stat-label">Applications per month</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number" data-count="90">0</div>
+      <div class="stat-label">Day replacement guarantee</div>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <section class="section">
+    <div class="reveal">
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">Not a job board.<br>Not a staffing agency.</h2>
+      <p class="section-desc">
+        White Glove is a different kind of recruiting. We work like consultants, think like advisors, and move like operators. Every hire is handpicked, vetted, and matched to your team's real needs.
+      </p>
+    </div>
+    <div class="what-grid">
+      <div class="what-card reveal">
+        <div class="what-card-icon gold">&#9733;</div>
+        <h3>Curated, not collected</h3>
+        <p>We screen 100+ applicants per role. You see only the 3 to 5 who genuinely fit your team, your culture, and your growth stage.</p>
+      </div>
+      <div class="what-card reveal">
+        <div class="what-card-icon green">&#9775;</div>
+        <h3>Global talent, real depth</h3>
+        <p>LATAM, Africa, Asia, Eastern Europe, Middle East. We tap into markets most recruiters don't even know exist, and we know them well.</p>
+      </div>
+      <div class="what-card reveal">
+        <div class="what-card-icon blue">&#9889;</div>
+        <h3>Speed without shortcuts</h3>
+        <p>First candidates in 7 to 10 working days. We move fast because we've already built the pipeline. Not because we cut corners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="process-inner">
+      <div class="reveal">
+        <div class="section-tag">How It Works</div>
+        <h2 class="section-title">Simple. Fast.<br>No guesswork.</h2>
+        <p class="section-desc">
+          From kickoff to placement, we handle the entire process so you can focus on running your business.
+        </p>
+      </div>
+      <div class="process-steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3>Kickoff Call</h3>
+          <p>We get on a call with you to understand the role, the team dynamics, and the kind of person who will actually thrive there. Not just skills. The whole picture.</p>
+          <span class="step-time">Day 1</span>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <h3>Sourcing & Screening</h3>
+          <p>We tap into our global network of 20,000+ monthly applicants, run deep screening interviews, and evaluate communication, drive, and culture fit.</p>
+          <span class="step-time">Days 2-7</span>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <h3>Shortlist Delivery</h3>
+          <p>You receive 3 to 5 candidates worth your time. Each one comes with a detailed profile, intro video, and our honest assessment. No fillers.</p>
+          <span class="step-time">Days 7-10</span>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">04</div>
+          <h3>You Pick, We Support</h3>
+          <p>You interview your top picks. We prep the candidates, coordinate the process, and support onboarding. If it doesn't work out, we replace them. Free.</p>
+          <span class="step-time">90-day guarantee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team-section" id="team">
+    <div class="team-header reveal">
+      <div class="section-tag">The Team</div>
+      <h2 class="section-title">The people behind<br>your next great hire.</h2>
+      <p class="section-desc">
+        We're not a call center. We're a small team of specialists who actually care about getting it right.
+      </p>
+    </div>
+    <div class="team-cards">
+      <!-- JESUS -->
+      <div class="team-card reveal">
+        <div class="team-card-img">
+          <img src="images/jesus.jpeg" alt="Jesus on the summit of Kilimanjaro" loading="lazy">
+        </div>
+        <div class="team-card-overlay"></div>
+        <div class="team-card-content">
+          <div class="team-card-location">Mendoza, Argentina</div>
+          <div class="team-card-name">Jesus</div>
+          <div class="team-card-role">Head of White Glove Hiring</div>
+          <div class="team-card-bio">
+            Jesus runs White Glove with a consulting mindset at its core. He works closely with each client to understand not just the role they need to fill, but the team around it and the kind of person who will genuinely thrive there.
+            <span class="fun">Don't be surprised if he takes the call from a van in Patagonia, a train in the Dolomites, or sunburned from climbing mountains.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MIGUEL -->
+      <div class="team-card reveal">
+        <div class="team-card-img">
+          <img src="images/miguel.jpg" alt="Miguel playing Ultimate Frisbee" loading="lazy">
+        </div>
+        <div class="team-card-overlay"></div>
+        <div class="team-card-content">
+          <div class="team-card-location">Medellin, Colombia</div>
+          <div class="team-card-name">Miguel</div>
+          <div class="team-card-role">Senior White Glove Advisor</div>
+          <div class="team-card-bio">
+            Miguel is all about connecting people and potential. With a background in psychology and recruitment, he's dedicated to matching the right talent to the right opportunities.
+            <span class="fun">International Ultimate Frisbee player. His eyes are always on the target. He might get your next hire faster than you ever dreamed.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUILLE -->
+      <div class="team-card reveal">
+        <div class="team-card-img">
+          <img src="images/guille.jpg" alt="Guille playing volleyball" loading="lazy">
+        </div>
+        <div class="team-card-overlay"></div>
+        <div class="team-card-content">
+          <div class="team-card-location">San Pedro Sula, Honduras</div>
+          <div class="team-card-name">Guille</div>
+          <div class="team-card-role">White Glove Advisor</div>
+          <div class="team-card-bio">
+            Guille connects skilled candidates with opportunities that allow them to grow and succeed. Driven by a passion for creating access and meaningful career pathways, he takes pride in helping professionals find the right platform to shine.
+            <span class="fun">Trusted pro setter volleyball player. He'll prepare the play so you can spike it over the net. Your best decision-making partner.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="section">
+    <div class="guarantee reveal">
+      <div class="guarantee-icon">&#128170;</div>
+      <h3>90-Day Replacement Guarantee</h3>
+      <p>If your new hire doesn't work out within the first 90 days, we replace them at no additional cost. Zero risk, full confidence.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner reveal">
+      <h2>Ready to hire<br><span class="accent">someone great</span>?</h2>
+      <p>Tell us what you need. We'll handle the rest.</p>
+      <a href="https://getsagan.com" target="_blank" class="btn-primary">
+        Let's Talk
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 <a href="https://getsagan.com" target="_blank">Sagan</a>. White Glove Hirings. Redefining Recruitment.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Stat counter
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stat-number');
+      counters.forEach(counter => {
+        const target = parseInt(counter.dataset.count);
+        const duration = 2000;
+        const start = performance.now();
+
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(target * ease);
+
+          if (target >= 1000) {
+            counter.textContent = current.toLocaleString() + '+';
+          } else {
+            counter.textContent = current + (target === 90 ? '' : '+');
+          }
+
+          if (progress < 1) requestAnimationFrame(update);
+        }
+
+        requestAnimationFrame(update);
+      });
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) statsObserver.observe(statsSection);
+  </script>
+
+</body>
+</html>
