@@ -77,8 +77,8 @@
     }
 
     .nav-logo img {
-      width: 28px;
-      height: 28px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
     }
 
@@ -567,46 +567,140 @@
       font-style: italic;
     }
 
-    /* ========== GUARANTEE ========== */
-    .guarantee {
-      background: white;
-      border-radius: 24px;
-      padding: 4rem;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      border: 2px solid var(--border);
-      position: relative;
+    /* ========== PLACED ROLES TICKER ========== */
+    .placed-section {
+      background: var(--teal);
+      padding: 5rem 0;
       overflow: hidden;
+      position: relative;
     }
 
-    .guarantee::before {
+    .placed-header {
+      text-align: center;
+      padding: 0 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .placed-header .section-tag {
+      background: rgba(245, 184, 0, 0.12);
+    }
+
+    .placed-header .section-title {
+      color: var(--cream);
+    }
+
+    .placed-header .section-desc {
+      color: rgba(245, 242, 237, 0.55);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .placed-count {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .marquee-wrap {
+      position: relative;
+    }
+
+    .marquee-wrap::before,
+    .marquee-wrap::after {
       content: '';
       position: absolute;
       top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .marquee-wrap::before {
       left: 0;
+      background: linear-gradient(90deg, var(--teal), transparent);
+    }
+
+    .marquee-wrap::after {
       right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--purple), var(--blue));
+      background: linear-gradient(270deg, var(--teal), transparent);
     }
 
-    .guarantee-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+    .marquee-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      width: max-content;
     }
 
-    .guarantee h3 {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
+    .marquee-row.left {
+      animation: scrollLeft 60s linear infinite;
     }
 
-    .guarantee p {
-      color: rgba(9, 58, 62, 0.6);
-      max-width: 500px;
-      margin: 0 auto;
-      line-height: 1.65;
+    .marquee-row.right {
+      animation: scrollRight 55s linear infinite;
+    }
+
+    .marquee-row.left-slow {
+      animation: scrollLeft 70s linear infinite;
+    }
+
+    .role-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      white-space: nowrap;
+      border: 1px solid rgba(245, 242, 237, 0.1);
+      background: rgba(245, 242, 237, 0.04);
+      color: rgba(245, 242, 237, 0.7);
+      transition: all 0.3s ease;
+    }
+
+    .role-pill::before {
+      content: '✓';
+      font-size: 0.65rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .role-pill:hover {
+      background: rgba(245, 184, 0, 0.1);
+      border-color: rgba(245, 184, 0, 0.25);
+      color: var(--cream);
+    }
+
+    .pipeline-hint {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding: 0 2.5rem;
+    }
+
+    .pipeline-hint p {
+      font-size: 0.9rem;
+      color: rgba(245, 242, 237, 0.4);
+      font-weight: 400;
+    }
+
+    .pipeline-hint span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes scrollRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
     }
 
     /* ========== CTA SECTION ========== */
@@ -953,12 +1047,140 @@
     </div>
   </section>
 
-  <!-- GUARANTEE -->
-  <section class="section">
-    <div class="guarantee reveal">
-      <div class="guarantee-icon">&#128170;</div>
-      <h3>90-Day Replacement Guarantee</h3>
-      <p>If your new hire doesn't work out within the first 90 days, we replace them at no additional cost. Zero risk, full confidence.</p>
+  <!-- PLACED ROLES -->
+  <section class="placed-section">
+    <div class="placed-header reveal">
+      <div class="section-tag">Track Record</div>
+      <div class="placed-count">60+ roles placed</div>
+      <p class="section-desc">
+        From executive assistants to software engineers. Every one of these was sourced, screened, and matched by our team.
+      </p>
+    </div>
+    <div class="marquee-wrap">
+      <div class="marquee-row left">
+        <div class="role-pill">Executive Assistant</div>
+        <div class="role-pill">Senior Sales Representative</div>
+        <div class="role-pill">UX/UI Designer</div>
+        <div class="role-pill">Operations Coordinator</div>
+        <div class="role-pill">FP&A Analyst</div>
+        <div class="role-pill">Content Marketing Specialist</div>
+        <div class="role-pill">Legal Assistant</div>
+        <div class="role-pill">Ecommerce Product Manager</div>
+        <div class="role-pill">Graphic Designer</div>
+        <div class="role-pill">Finance Operations Specialist</div>
+        <div class="role-pill">Head of Data & Analytics</div>
+        <div class="role-pill">Customer Service Representative</div>
+        <div class="role-pill">Marketing Manager</div>
+        <div class="role-pill">Sr. Software Engineer</div>
+        <div class="role-pill">Chief of Staff</div>
+        <div class="role-pill">Construction Estimator</div>
+        <div class="role-pill">Loan Coordinator</div>
+        <div class="role-pill">SDR</div>
+        <div class="role-pill">Video Editor</div>
+        <div class="role-pill">Office Manager</div>
+        <!-- duplicate set for seamless loop -->
+        <div class="role-pill">Executive Assistant</div>
+        <div class="role-pill">Senior Sales Representative</div>
+        <div class="role-pill">UX/UI Designer</div>
+        <div class="role-pill">Operations Coordinator</div>
+        <div class="role-pill">FP&A Analyst</div>
+        <div class="role-pill">Content Marketing Specialist</div>
+        <div class="role-pill">Legal Assistant</div>
+        <div class="role-pill">Ecommerce Product Manager</div>
+        <div class="role-pill">Graphic Designer</div>
+        <div class="role-pill">Finance Operations Specialist</div>
+        <div class="role-pill">Head of Data & Analytics</div>
+        <div class="role-pill">Customer Service Representative</div>
+        <div class="role-pill">Marketing Manager</div>
+        <div class="role-pill">Sr. Software Engineer</div>
+        <div class="role-pill">Chief of Staff</div>
+        <div class="role-pill">Construction Estimator</div>
+        <div class="role-pill">Loan Coordinator</div>
+        <div class="role-pill">SDR</div>
+        <div class="role-pill">Video Editor</div>
+        <div class="role-pill">Office Manager</div>
+      </div>
+      <div class="marquee-row right">
+        <div class="role-pill">AP/AR Specialist</div>
+        <div class="role-pill">Content Writer</div>
+        <div class="role-pill">Operations Administrator</div>
+        <div class="role-pill">Ops & Billing Data Analyst</div>
+        <div class="role-pill">Senior Visual Designer</div>
+        <div class="role-pill">Facebook Marketplace Specialist</div>
+        <div class="role-pill">Production Coordinator</div>
+        <div class="role-pill">Remote Acquisitions Analyst</div>
+        <div class="role-pill">IT Project Manager</div>
+        <div class="role-pill">Sales Associate</div>
+        <div class="role-pill">Content Operations Manager</div>
+        <div class="role-pill">Software Developer</div>
+        <div class="role-pill">Collection Specialist</div>
+        <div class="role-pill">Leasing Assistant</div>
+        <div class="role-pill">Media Buyer</div>
+        <div class="role-pill">Customer Success & CRM Coordinator</div>
+        <div class="role-pill">Dispatch Coordinator</div>
+        <div class="role-pill">Recruiter</div>
+        <div class="role-pill">Private Office Director</div>
+        <div class="role-pill">Test Engineer</div>
+        <!-- duplicate set for seamless loop -->
+        <div class="role-pill">AP/AR Specialist</div>
+        <div class="role-pill">Content Writer</div>
+        <div class="role-pill">Operations Administrator</div>
+        <div class="role-pill">Ops & Billing Data Analyst</div>
+        <div class="role-pill">Senior Visual Designer</div>
+        <div class="role-pill">Facebook Marketplace Specialist</div>
+        <div class="role-pill">Production Coordinator</div>
+        <div class="role-pill">Remote Acquisitions Analyst</div>
+        <div class="role-pill">IT Project Manager</div>
+        <div class="role-pill">Sales Associate</div>
+        <div class="role-pill">Content Operations Manager</div>
+        <div class="role-pill">Software Developer</div>
+        <div class="role-pill">Collection Specialist</div>
+        <div class="role-pill">Leasing Assistant</div>
+        <div class="role-pill">Media Buyer</div>
+        <div class="role-pill">Customer Success & CRM Coordinator</div>
+        <div class="role-pill">Dispatch Coordinator</div>
+        <div class="role-pill">Recruiter</div>
+        <div class="role-pill">Private Office Director</div>
+        <div class="role-pill">Test Engineer</div>
+      </div>
+      <div class="marquee-row left-slow">
+        <div class="role-pill">Ecom Operations Manager</div>
+        <div class="role-pill">Outside Sales Representative</div>
+        <div class="role-pill">Web & Graphic Designer</div>
+        <div class="role-pill">Plumbing Estimator</div>
+        <div class="role-pill">Junior Project Estimator</div>
+        <div class="role-pill">Personal Assistant</div>
+        <div class="role-pill">Centralized Leasing Agent</div>
+        <div class="role-pill">Senior Executive Assistant</div>
+        <div class="role-pill">Accounts Payable Clerk</div>
+        <div class="role-pill">Telemarketing Specialist</div>
+        <div class="role-pill">Operations & Sales Support</div>
+        <div class="role-pill">Catering Sales</div>
+        <div class="role-pill">Marketing Specialist</div>
+        <div class="role-pill">Office Assistant</div>
+        <div class="role-pill">Designer</div>
+        <div class="role-pill">Legal/Executive Assistant</div>
+        <!-- duplicate set for seamless loop -->
+        <div class="role-pill">Ecom Operations Manager</div>
+        <div class="role-pill">Outside Sales Representative</div>
+        <div class="role-pill">Web & Graphic Designer</div>
+        <div class="role-pill">Plumbing Estimator</div>
+        <div class="role-pill">Junior Project Estimator</div>
+        <div class="role-pill">Personal Assistant</div>
+        <div class="role-pill">Centralized Leasing Agent</div>
+        <div class="role-pill">Senior Executive Assistant</div>
+        <div class="role-pill">Accounts Payable Clerk</div>
+        <div class="role-pill">Telemarketing Specialist</div>
+        <div class="role-pill">Operations & Sales Support</div>
+        <div class="role-pill">Catering Sales</div>
+        <div class="role-pill">Marketing Specialist</div>
+        <div class="role-pill">Office Assistant</div>
+        <div class="role-pill">Designer</div>
+        <div class="role-pill">Legal/Executive Assistant</div>
+      </div>
+    </div>
+    <div class="pipeline-hint reveal">
+      <p><span>38 active searches</span> running right now. Your next hire might already be in our pipeline.</p>
     </div>
   </section>
 
