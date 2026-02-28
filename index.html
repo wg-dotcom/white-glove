@@ -17,7 +17,7 @@
       --teal-dark: #06282b;
       --cream: #f5f2ed;
       --gold: #f5b800;
-      --green: #5ce3b0;
+      /* green removed — was #5ce3b0, too close to Somewhere branding */
       --blue: #2197ff;
       --purple: #796aff;
       --border: #e3ded8;
@@ -67,14 +67,24 @@
     }
 
     .nav-logo {
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
       color: var(--cream);
+    }
+
+    .nav-logo img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
     }
 
     .nav-logo span {
       color: var(--gold);
+      font-weight: 500;
     }
 
     .nav-cta {
@@ -114,7 +124,7 @@
       width: 80vw;
       height: 80vw;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(92, 227, 176, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(33, 151, 255, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -183,7 +193,7 @@
     }
 
     .hero h1 .green {
-      color: var(--green);
+      color: var(--blue);
     }
 
     .hero-sub {
@@ -357,7 +367,7 @@
     }
 
     .what-card-icon.gold { background: rgba(245, 184, 0, 0.12); }
-    .what-card-icon.green { background: rgba(92, 227, 176, 0.12); }
+    .what-card-icon.green { background: rgba(121, 106, 255, 0.12); }
     .what-card-icon.blue { background: rgba(33, 151, 255, 0.12); }
 
     .what-card h3 {
@@ -395,14 +405,14 @@
 
     .process-steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
       margin-top: 4rem;
     }
 
     .step {
       position: relative;
-      padding: 2rem;
+      padding: 1.5rem;
       background: rgba(245, 242, 237, 0.04);
       border: 1px solid rgba(245, 242, 237, 0.08);
       border-radius: 20px;
@@ -415,24 +425,24 @@
     }
 
     .step-num {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       font-weight: 900;
       color: rgba(245, 184, 0, 0.15);
       line-height: 1;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       letter-spacing: -0.05em;
     }
 
     .step h3 {
-      font-size: 1.15rem;
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .step p {
       color: rgba(245, 242, 237, 0.55);
-      font-size: 0.9rem;
-      line-height: 1.6;
+      font-size: 0.82rem;
+      line-height: 1.55;
     }
 
     .step-time {
@@ -440,7 +450,7 @@
       margin-top: 1rem;
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--green);
+      color: var(--gold);
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
@@ -552,7 +562,7 @@
     .team-card-bio .fun {
       display: block;
       margin-top: 0.75rem;
-      color: var(--green);
+      color: var(--gold);
       font-weight: 400;
       font-style: italic;
     }
@@ -577,7 +587,7 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--green), var(--blue));
+      background: linear-gradient(90deg, var(--gold), var(--purple), var(--blue));
     }
 
     .guarantee-icon {
@@ -682,7 +692,16 @@
     }
 
     /* ========== RESPONSIVE ========== */
+    @media (max-width: 1100px) {
+      .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     @media (max-width: 900px) {
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .team-cards {
         grid-template-columns: 1fr;
       }
@@ -748,7 +767,7 @@
 
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <div class="nav-logo">SAGAN <span>White Glove</span></div>
+    <div class="nav-logo"><img src="images/sagan-logo.png" alt="Sagan">Sagan <span>White Glove</span></div>
     <a href="https://getsagan.com" target="_blank" class="nav-cta">Work With Us</a>
   </nav>
 
@@ -909,7 +928,7 @@
           <div class="team-card-name">Miguel</div>
           <div class="team-card-role">Senior White Glove Advisor</div>
           <div class="team-card-bio">
-            Miguel is all about connecting people and potential. With a background in psychology and recruitment, he's dedicated to matching the right talent to the right opportunities.
+            Miggy is all about connecting people and potential. With a background in psychology and recruitment, he's dedicated to matching the right talent to the right opportunities.
             <span class="fun">International Ultimate Frisbee player. His eyes are always on the target. He might get your next hire faster than you ever dreamed.</span>
           </div>
         </div>
