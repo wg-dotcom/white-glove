@@ -73,8 +73,13 @@
       font-weight: 800;
       font-size: 1.5rem;
       letter-spacing: -0.02em;
-      color: var(--cream);
+      color: var(--teal);
       white-space: nowrap;
+      transition: color 0.4s ease;
+    }
+
+    .nav.scrolled .nav-logo {
+      color: var(--cream);
     }
 
     .nav-logo img {
@@ -87,6 +92,11 @@
       color: var(--gold);
       font-weight: 600;
       margin-left: 0.1rem;
+      transition: color 0.4s ease;
+    }
+
+    .nav.scrolled .nav-logo span {
+      color: var(--gold);
     }
 
     .nav-cta {
@@ -109,7 +119,7 @@
     /* ========== HERO ========== */
     .hero {
       min-height: 100vh;
-      background: var(--teal);
+      background: var(--cream);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -126,7 +136,7 @@
       width: 80vw;
       height: 80vw;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(33, 151, 255, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(9, 58, 62, 0.04) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -138,7 +148,7 @@
       width: 60vw;
       height: 60vw;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(245, 184, 0, 0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(33, 151, 255, 0.05) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -154,13 +164,13 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(245, 184, 0, 0.12);
-      border: 1px solid rgba(245, 184, 0, 0.25);
+      background: rgba(9, 58, 62, 0.06);
+      border: 1px solid rgba(9, 58, 62, 0.12);
       padding: 0.5rem 1rem;
       border-radius: 100px;
       font-size: 0.8rem;
       font-weight: 500;
-      color: var(--gold);
+      color: var(--teal);
       letter-spacing: 0.05em;
       text-transform: uppercase;
       margin-bottom: 2rem;
@@ -183,7 +193,7 @@
       font-weight: 800;
       line-height: 0.95;
       letter-spacing: -0.04em;
-      color: var(--cream);
+      color: var(--teal);
       margin-bottom: 2rem;
       opacity: 0;
       transform: translateY(30px);
@@ -200,7 +210,7 @@
 
     .hero-sub {
       font-size: clamp(1.1rem, 1.5vw, 1.35rem);
-      color: rgba(245, 242, 237, 0.7);
+      color: rgba(9, 58, 62, 0.6);
       max-width: 600px;
       line-height: 1.6;
       font-weight: 300;
@@ -242,19 +252,19 @@
 
     .btn-secondary {
       background: transparent;
-      color: var(--cream);
+      color: var(--teal);
       padding: 1rem 2.5rem;
       border-radius: 100px;
       font-weight: 500;
       font-size: 1rem;
-      border: 1.5px solid rgba(245, 242, 237, 0.25);
+      border: 1.5px solid rgba(9, 58, 62, 0.2);
       transition: all 0.3s ease;
       cursor: pointer;
     }
 
     .btn-secondary:hover {
-      border-color: var(--cream);
-      background: rgba(245, 242, 237, 0.08);
+      border-color: var(--teal);
+      background: rgba(9, 58, 62, 0.05);
     }
 
     /* ========== STATS STRIP ========== */
@@ -387,9 +397,10 @@
 
     /* ========== PROCESS ========== */
     .process-section {
-      background: var(--teal);
+      background: var(--cream);
       padding: 7rem 2.5rem;
-      color: var(--cream);
+      color: var(--teal);
+      border-top: 1px solid var(--border);
     }
 
     .process-inner {
@@ -398,11 +409,11 @@
     }
 
     .process-section .section-title {
-      color: var(--cream);
+      color: var(--teal);
     }
 
     .process-section .section-desc {
-      color: rgba(245, 242, 237, 0.6);
+      color: rgba(9, 58, 62, 0.6);
     }
 
     .process-steps {
@@ -415,21 +426,22 @@
     .step {
       position: relative;
       padding: 1.5rem;
-      background: rgba(245, 242, 237, 0.04);
-      border: 1px solid rgba(245, 242, 237, 0.08);
+      background: white;
+      border: 1px solid var(--border);
       border-radius: 20px;
       transition: all 0.3s ease;
     }
 
     .step:hover {
-      background: rgba(245, 242, 237, 0.08);
-      border-color: rgba(245, 242, 237, 0.15);
+      background: white;
+      border-color: rgba(9, 58, 62, 0.15);
+      box-shadow: 0 8px 30px rgba(9, 58, 62, 0.06);
     }
 
     .step-num {
       font-size: 2.5rem;
       font-weight: 900;
-      color: rgba(245, 184, 0, 0.15);
+      color: rgba(9, 58, 62, 0.08);
       line-height: 1;
       margin-bottom: 0.75rem;
       letter-spacing: -0.05em;
@@ -439,10 +451,11 @@
       font-size: 1rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
+      color: var(--teal);
     }
 
     .step p {
-      color: rgba(245, 242, 237, 0.55);
+      color: rgba(9, 58, 62, 0.55);
       font-size: 0.82rem;
       line-height: 1.55;
     }
@@ -571,10 +584,11 @@
 
     /* ========== PLACED ROLES TICKER ========== */
     .placed-section {
-      background: var(--teal);
+      background: var(--cream);
       padding: 5rem 0;
       overflow: hidden;
       position: relative;
+      border-top: 1px solid var(--border);
     }
 
     .placed-header {
@@ -584,15 +598,15 @@
     }
 
     .placed-header .section-tag {
-      background: rgba(245, 184, 0, 0.12);
+      background: rgba(245, 184, 0, 0.1);
     }
 
     .placed-header .section-title {
-      color: var(--cream);
+      color: var(--teal);
     }
 
     .placed-header .section-desc {
-      color: rgba(245, 242, 237, 0.55);
+      color: rgba(9, 58, 62, 0.55);
       max-width: 600px;
       margin: 0 auto;
     }
@@ -600,7 +614,7 @@
     .placed-count {
       font-size: clamp(3rem, 6vw, 5rem);
       font-weight: 900;
-      color: var(--gold);
+      color: var(--teal);
       letter-spacing: -0.04em;
       line-height: 1;
       margin-bottom: 0.5rem;
@@ -623,12 +637,12 @@
 
     .marquee-wrap::before {
       left: 0;
-      background: linear-gradient(90deg, var(--teal), transparent);
+      background: linear-gradient(90deg, var(--cream), transparent);
     }
 
     .marquee-wrap::after {
       right: 0;
-      background: linear-gradient(270deg, var(--teal), transparent);
+      background: linear-gradient(270deg, var(--cream), transparent);
     }
 
     .marquee-row {
@@ -659,9 +673,9 @@
       font-size: 0.8rem;
       font-weight: 500;
       white-space: nowrap;
-      border: 1px solid rgba(245, 242, 237, 0.1);
-      background: rgba(245, 242, 237, 0.04);
-      color: rgba(245, 242, 237, 0.7);
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--teal);
       transition: all 0.3s ease;
     }
 
@@ -673,9 +687,9 @@
     }
 
     .role-pill:hover {
-      background: rgba(245, 184, 0, 0.1);
-      border-color: rgba(245, 184, 0, 0.25);
-      color: var(--cream);
+      background: rgba(9, 58, 62, 0.04);
+      border-color: rgba(9, 58, 62, 0.2);
+      color: var(--teal);
     }
 
     .pipeline-hint {
@@ -686,12 +700,12 @@
 
     .pipeline-hint p {
       font-size: 0.9rem;
-      color: rgba(245, 242, 237, 0.4);
+      color: rgba(9, 58, 62, 0.4);
       font-weight: 400;
     }
 
     .pipeline-hint span {
-      color: var(--gold);
+      color: var(--teal);
       font-weight: 600;
     }
 
