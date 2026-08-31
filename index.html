@@ -837,8 +837,27 @@
         padding: 1rem 1.5rem;
       }
 
+      .nav.scrolled {
+        padding: 0.75rem 1.5rem;
+      }
+
       .section {
         padding: 5rem 1.5rem;
+      }
+
+      .process-section,
+      .cta-section {
+        padding: 5rem 1.5rem;
+      }
+
+      .team-section {
+        padding: 5rem 0;
+      }
+
+      .team-header,
+      .placed-header {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
 
       .guarantee {
@@ -848,27 +867,266 @@
     }
 
     @media (max-width: 600px) {
+      html {
+        font-size: 15px;
+      }
+
+      body {
+        overflow-wrap: anywhere;
+      }
+
+      .nav,
+      .nav.scrolled {
+        gap: 0.65rem;
+        padding: 0.75rem max(1rem, env(safe-area-inset-right)) 0.75rem max(1rem, env(safe-area-inset-left));
+      }
+
+      .nav-logo {
+        gap: 0.4rem;
+        font-size: 1.05rem;
+        line-height: 1;
+      }
+
+      .nav-logo img {
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+      }
+
+      .nav-logo span {
+        margin-left: 0;
+      }
+
+      .nav-cta {
+        min-height: 44px;
+        padding: 0.7rem 1rem;
+        font-size: 0.78rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 7.5rem 1.25rem 4.5rem;
+      }
+
+      .hero::before,
+      .hero::after {
+        display: none;
+      }
+
+      .hero-tag {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        font-size: 0.72rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.65rem, 13vw, 4rem);
+        line-height: 0.98;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-sub {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+      }
+
       .hero-buttons {
         flex-direction: column;
+        width: 100%;
       }
 
       .btn-primary, .btn-secondary {
+        width: 100%;
+        min-height: 48px;
         text-align: center;
         justify-content: center;
       }
 
       .stats {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 2.5rem 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        padding: 1px;
+        background: rgba(245, 242, 237, 0.14);
+      }
+
+      .stat {
+        min-width: 0;
+        padding: 1.75rem 0.75rem;
+        background: var(--teal-dark);
+      }
+
+      .stat:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .stat-number {
+        font-size: 2.35rem;
+      }
+
+      .stat-label {
+        font-size: 0.76rem;
+        line-height: 1.35;
+      }
+
+      .section,
+      .process-section,
+      .cta-section {
+        padding: 4rem 1.25rem;
+      }
+
+      .section-title,
+      .cta-section h2 {
+        font-size: clamp(2.25rem, 11vw, 3.25rem);
+      }
+
+      .section-desc,
+      .cta-section p {
+        font-size: 1.02rem;
+      }
+
+      .what-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+        margin-top: 2.5rem;
+      }
+
+      .what-card {
+        min-width: 0;
+        padding: 1.75rem;
       }
 
       .process-steps {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2.5rem;
+      }
+
+      .step {
+        padding: 1.5rem;
+      }
+
+      .team-section {
+        padding: 4rem 0 0;
+      }
+
+      .team-header {
+        padding: 0 1.25rem;
+        margin-bottom: 2.5rem;
       }
 
       .team-card {
-        min-height: 80vh;
+        min-height: max(42rem, 82svh);
+      }
+
+      .team-card-content {
+        padding: 1.5rem 1.25rem 1.75rem;
+      }
+
+      .team-card-name {
+        font-size: 2.25rem;
+      }
+
+      .team-card-bio {
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .placed-section {
+        padding: 4rem 0;
+      }
+
+      .placed-header {
+        padding: 0 1.25rem;
+        margin-bottom: 2.25rem;
+      }
+
+      .placed-count {
+        font-size: clamp(2.75rem, 14vw, 4rem);
+      }
+
+      .marquee-wrap::before,
+      .marquee-wrap::after {
+        width: 40px;
+      }
+
+      .role-pill {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.75rem;
+      }
+
+      .pipeline-hint {
+        margin-top: 2rem;
+        padding: 0 1.25rem;
+      }
+
+      .cta-section .btn-primary {
+        padding: 1rem 1.5rem;
+      }
+
+      .footer {
+        padding: 2rem 1.25rem calc(2rem + env(safe-area-inset-bottom));
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav-logo {
+        font-size: 0.95rem;
+      }
+
+      .nav-logo img {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+      }
+
+      .nav-cta {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+        font-size: 0.72rem;
+      }
+
+      .hero {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.55rem;
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .team-card-bio {
+        max-height: none;
+        opacity: 1;
+      }
+
+      .nav-cta:hover,
+      .btn-primary:hover,
+      .what-card:hover,
+      .step:hover,
+      .team-card:hover .team-card-img img {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
